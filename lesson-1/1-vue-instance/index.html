@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div id="app">
+        <h1>{{title}}</h1>
+        <p>{{content}}</p>
+        <a :target="google.target" v-bind:href="google.url" v-bind:alt="google.alt" v-bind:yca="owner">{{google.title}}
+        </a>
+        <br />
+        <br />
+        <button v-on:click="changeTitle('Bu 1. buton')">Title değiştir...</button>
+        <button v-on:click="changeTitle('Bu 2. buton')">Title 2 değiştir...</button>
+
+        <div @mousemove="updateCoords('mouseMove', $event)" class="box"
+            @click="changeTitle('Box üzerinden gelen click eventi')"></div>
+        <span>{{coords.x}}, {{coords.y}}</span>
+    </div>
+    <script src="./app.js"></script>
+</body>
+
+</html>
